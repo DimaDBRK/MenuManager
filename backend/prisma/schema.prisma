@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Menu
+model Item {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255) @unique
+  description String?  @db.VarChar(1000)
+  price       Float
+  category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  Int? //if category deleted, it will be Null
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    String
+  pictureUrl  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt @db.Timestamptz(6)
+}
+
+model Category {
+  id    Int     @id @default(autoincrement())
+  title String  @unique
+  items Item[]
+}
+
+// User
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  name      String?
+  password  String
+  createdAt DateTime  @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @db.Timestamptz(6)
+  items     Item[]
+  tokens    Token[]
+}
+
+model Token {
+  id        String    @id @default(cuid())
+  token     String    @unique
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+  createdAt DateTime  @default(now()) @db.Timestamptz(6)
+}
