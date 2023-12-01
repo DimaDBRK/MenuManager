@@ -16,7 +16,8 @@ The application allows viewing and editing the restaurant menu through a web int
 
 Demo video: TBC
 
+![Manu](menuScreen.png)
 ## Table of Contents
 
 - [Restaurant Menu Manger](#restaurant-menu-manger)
-  - - [Table of Contents](#table-of-contents) 
+  - [Table of Contents](#table-of-contents) 
