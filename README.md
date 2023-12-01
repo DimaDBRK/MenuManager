@@ -8,4 +8,15 @@ In the end, the following should be achieved: a website on the proposed stack wi
 
 ## Web Service Overview
 
-Viewing and editing the restaurant menu through a web interface.
+The application allows viewing and editing the restaurant menu through a web interface.
+
+- Frontend: React + Axios
+- Backend: Node.js + PostgreSQL + Prisma
+- Authentication System: JWT-based
+
+Demo video: TBC
+
+## Table of Contents
+
+- [Restaurant Menu Manger](#restaurant-menu-manger)
+  - - [Table of Contents](#table-of-contents) 
