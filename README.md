@@ -1,5 +1,5 @@
 # Restaurant Menu Manger
-
+![Logo](/docs/menulogo.png)
 # Task Description: 
 
 Create an input form and categories for menu items (it would be a plus if you come up with some interesting categories). Ensure authorized access to the menu item addition page, editing, and uploading images from the user's PC.
