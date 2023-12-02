@@ -103,7 +103,7 @@ DELETE /api/menu/categories/delete/{ID}
 
 ## Frontend
 Pages and main components.
-![Manager](manager.jpg)
+![Manager](/docs/manager.jpg)
 Main components:
 * Homepage - info
 * Menu - to show Menu Items card by Category
