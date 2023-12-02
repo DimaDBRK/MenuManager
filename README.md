@@ -24,3 +24,50 @@ Demo video: TBC
 - [Task Description:](#task-description)
   - [Web Service Overview](#web-service-overview)
   - [Table of Contents](#table-of-contents)
+  - [Database](#database)
+
+## Database
+
+Prisma automates every part of setup and running of PostgreSQL clusters.
+For details check backend - prisma - schema.prisma
+There are Tables:
+
+
+model Item {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255) @unique
+  description String?  @db.VarChar(1000)
+  price       Float
+  category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  Int? 
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    String
+  pictureUrl  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt @db.Timestamptz(6)
+}
+
+model Category {
+  id    Int     @id @default(autoincrement())
+  title String  @unique
+  items Item[]
+}
+
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  name      String?
+  password  String
+  createdAt DateTime  @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @db.Timestamptz(6)
+  items     Item[]
+  tokens    Token[]
+}
+
+model Token {
+  id        String    @id @default(cuid())
+  token     String    @unique
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+  createdAt DateTime  @default(now()) @db.Timestamptz(6)
+}
