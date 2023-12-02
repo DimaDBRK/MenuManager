@@ -82,24 +82,24 @@ Node.js server.
 List of API’s:
 
 User
-POST /api/users/login
-POST /api/users/register
-GET /api/users/all
-GET /api/users/logout
+* POST /api/users/login
+* POST /api/users/register
+* GET /api/users/all
+* GET /api/users/logout
 
 Item
-GET /api/menu/items/all
-POST /api/menu/items/create
-PUT /api/menu/items/update/{ID}
-DELETE /api/menu/items/delete/{ID}
-POST /api/menu/items/update_picture/{ID}
-DELETE /api/menu/items/delete_picture/{ID}
+* GET /api/menu/items/all
+* POST /api/menu/items/create
+* PUT /api/menu/items/update/{ID}
+* DELETE /api/menu/items/delete/{ID}
+* POST /api/menu/items/update_picture/{ID}
+* DELETE /api/menu/items/delete_picture/{ID}
 
 Category
-GET /api/menu/categories/all
-POST api/menu/categories/create
-PUT /api/menu/categories/update/{ID}
-DELETE /api/menu/categories/delete/{ID}
+* GET /api/menu/categories/all
+* POST api/menu/categories/create
+* PUT /api/menu/categories/update/{ID}
+* DELETE /api/menu/categories/delete/{ID}
 
 ## Frontend
 Pages and main components.
